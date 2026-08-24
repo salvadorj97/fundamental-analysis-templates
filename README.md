@@ -73,20 +73,31 @@ ETF files follow the same structure but replace `DuPont_Pyramid` with ETF-specif
 ### For US stocks (automated via Power Query)
 
 1. Open `AF_Stocks_TEMPLATE_EN.xlsx`
-2. Go to `Setup` → paste your [FMP API Key](https://financialmodelingprep.com/dashboard) in the green cell → enter the ticker (e.g. `ADBE`)
-3. Go to **Data → Queries & Connections** → right-click each query → **Refresh**
-4. `Input_Data` populates automatically from `FMP_Data`
-5. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
-6. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
-7. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
+2. Go to `FMP_Data` and copy Income Statement link
+3. Find your key in [FMP API Key](https://financialmodelingprep.com/dashboard) and replace TICKER (e.g. `ADBE`) and YOUR_KEY, copy the full link
+4. Go to **Data → Get Data → From other sources → From web ** → in the query select → **To table** and OK. Click on the arrows → OK → **Close & Load**
+5. Repeat the process for **Balance Sheet** and **Cash Flow** from **FMP_Data**
+6. `Input_Data` populates automatically from `FMP_Data`
+7. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
+8. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
+9. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
+
+Limitations: FMP requires a subscription to access most of stocks data, only the most popular ones are for free. So consider doing it manually if you don't want to pay. 
 
 ### For Mexican stocks (manual entry)
 
 There is no free API for BMV tickers. Fill `Input_Data` manually:
 
-- **Yahoo Finance** → search `WALMEX.MX` → Financials tab (income statement, balance sheet, cash flow)
+- **Yahoo Finance or Stockanalysis.com** → search `WALMEX.MX` → Overview tab, Financials tab (income statement, balance sheet, cash flow), Statistics tab, Dividends tab.
 - **BMV** → [bmv.com.mx](https://www.bmv.com.mx) → Información Periódica → XBRL quarterly reports
-- **GBM** → your transaction history for purchase price and shares
+- **GBM or other broker** → your transaction history for purchase price and shares
+- **Macrotrends.net** → to compare PE ratio per year
+
+### For other stocks (manual entry)
+
+- **Yahoo Finance** → search `TICKER` → Overview tab, Financials tab (income statement, balance sheet, cash flow), Statistics tab, Dividends tab.
+- **Stockanalysis.com** → search `TICKER` → Overview tab, Financials tab (income statement, balance sheet, cash flow), Statistics tab, Dividends tab.
+- **Macrotrends.net** → to compare PE ratio per year
 
 ---
 
