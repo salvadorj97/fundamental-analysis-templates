@@ -73,20 +73,42 @@ ETF files follow the same structure but replace `DuPont_Pyramid` with ETF-specif
 ### For US stocks (automated via Power Query)
 
 1. Open `AF_Stocks_TEMPLATE_EN.xlsx`
-2. Go to `Setup` → paste your [FMP API Key](https://financialmodelingprep.com/dashboard) in the green cell → enter the ticker (e.g. `ADBE`)
-3. Go to **Data → Queries & Connections** → right-click each query → **Refresh**
-4. `Input_Data` populates automatically from `FMP_Data`
-5. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
-6. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
-7. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
+2. Go to `FMP_Data` and copy the Income Statement link
+3. Get your key from [financialmodelingprep.com/dashboard](https://financialmodelingprep.com/dashboard), replace `TICKER` (e.g. `ADBE`) and `YOUR_KEY` in the link, then copy the full URL
+
+![FMP](assets/FMP.jpg)
+
+4. Go to **Data → Get Data → From Other Sources → From Web**, paste the URL and confirm
+5. In the Power Query editor, click **To Table** → OK
+6. Click the expand arrows on the column header → OK → **Close & Load**
+
+![Open_Arrows](assets/Open_Arrows.jpg)
+
+7. Repeat the process for **Balance Sheet** and **Cash Flow** links from `FMP_Data`
+8. `Input_Data` populates automatically from `FMP_Data`
+
+![Income_Statement](assets/Income_Statement.jpg)
+
+9. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
+10. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
+11. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
+
+> **Note:** FMP requires a subscription to access most stock data. Only the most popular tickers are available for free. Consider filling `Input_Data` manually if you prefer not to subscribe — all data sources are listed in the table below.
 
 ### For Mexican stocks (manual entry)
 
 There is no free API for BMV tickers. Fill `Input_Data` manually:
 
-- **Yahoo Finance** → search `WALMEX.MX` → Financials tab (income statement, balance sheet, cash flow)
+- **Yahoo Finance or stockanalysis.com** → search `WALMEX.MX` → Overview, Financials (income statement, balance sheet, cash flow), Statistics, and Dividends tabs
 - **BMV** → [bmv.com.mx](https://www.bmv.com.mx) → Información Periódica → XBRL quarterly reports
-- **GBM** → your transaction history for purchase price and shares
+- **GBM or other broker** → your transaction history for purchase price and shares
+- **macrotrends.net** → historical P/E ratio by year
+
+### For other stocks (manual entry)
+
+- **Yahoo Finance** → search `TICKER` → Overview, Financials (income statement, balance sheet, cash flow), Statistics, and Dividends tabs
+- **stockanalysis.com** → search `TICKER` → Overview, Financials, Statistics, and Dividends tabs
+- **macrotrends.net** → historical P/E ratio by year
 
 ---
 
@@ -97,7 +119,7 @@ There is no free API for BMV tickers. Fill `Input_Data` manually:
 | Quarterly financials (US) | [financialmodelingprep.com](https://financialmodelingprep.com) — free tier covers 4 quarters |
 | Share Price (current) | [stockanalysis.com/stocks/TICKER](https://stockanalysis.com) → live price |
 | P/E Ratio (TTM) | stockanalysis.com/stocks/TICKER → Summary → "PE Ratio (TTM)" |
-| Historical Avg P/E | [stockanalysis.com/stocks/TICKER/financials/](https://stockanalysis.com) → PE Ratio column → average last 5 fiscal years manually |
+| Historical Avg P/E | stockanalysis.com/stocks/TICKER/financials/ → PE Ratio column → average last 5 fiscal years manually |
 | Forward P/E | stockanalysis.com/stocks/TICKER → Summary → "Forward PE" |
 | P/B Ratio | stockanalysis.com/stocks/TICKER → Statistics → "P/B Ratio" |
 | 52-Week Range | stockanalysis.com/stocks/TICKER → Summary |
@@ -130,6 +152,8 @@ There is no free API for BMV tickers. Fill `Input_Data` manually:
 - **FCF Yield** = Free Cash Flow / Market Cap (>5% attractive)
 - **Dividend Yield** = Annual Dividend / Share Price
 
+![Analysis](assets/Analysis.jpg)
+
 ---
 
 ## DuPont Pyramid
@@ -140,12 +164,30 @@ The `DuPont_Pyramid` sheet decomposes ROE into three drivers:
 ROE = Net Margin × Asset Turnover × Financial Leverage
 ```
 
+![DuPont_Pyramid](assets/DuPont_Pyramid.jpg)
+
 This tells you *why* ROE is what it is:
 - High **Net Margin** → the company keeps a large share of each dollar of revenue
 - High **Asset Turnover** → the company generates a lot of revenue per dollar of assets
 - High **Financial Leverage** → the company uses debt to amplify returns (also amplifies risk)
 
 A company with high ROE driven by margins is more sustainable than one driven by leverage.
+
+---
+
+## See it in action
+
+Once you have filled in your data, the **My_Position** sheet gives you a complete picture of your investment: your personal P&L, growth projections using the Rule of 72, and a Buy Zone analysis that tells you whether the current price is attractive, neutral, or expensive relative to the company's own history.
+
+![My_Position](assets/My_Position.jpg)
+
+In this example (Microsoft, August 2026):
+- The stock is trading **12.5% below its 5-year historical P/E average** → 🟢 ATTRACTIVE
+- It sits at the **65th percentile** of its 52-week range → 🟡 NORMAL
+- The target entry price based on P/E reversion is **$549.80** → 🟢 BUY ZONE
+- Overall conclusion: **🟡 NEUTRAL** — strong fundamentals, but not at a discount price yet
+
+This is the kind of context that turns a gut feeling into an informed decision.
 
 ---
 
