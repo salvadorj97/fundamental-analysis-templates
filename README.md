@@ -74,15 +74,17 @@ ETF files follow the same structure but replace `DuPont_Pyramid` with ETF-specif
 
 1. Open `AF_Stocks_TEMPLATE_EN.xlsx`
 2. Go to `FMP_Data` and copy Income Statement link
-![FMP](assets/FMP.png)
-
-4. Find your key in [FMP API Key](https://financialmodelingprep.com/dashboard) and replace TICKER (e.g. `ADBE`) and YOUR_KEY, copy the full link
-5. Go to **Data → Get Data → From other sources → From web ** → in the query select → **To table** and OK. Click on the arrows → OK → **Close & Load**
-6. Repeat the process for **Balance Sheet** and **Cash Flow** from **FMP_Data**
-7. `Input_Data` populates automatically from `FMP_Data`
-8. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
-9. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
-10. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
+3. Find your key in [FMP API Key](https://financialmodelingprep.com/dashboard) and replace TICKER (e.g. `ADBE`) and YOUR_KEY, copy the full link
+![FMP](assets/FMP.jpg)
+4. Go to **Data → Get Data → From other sources → From web **
+![Get_Data](assets/Get_Data.jpg)
+5. In the query select → **To table** and OK
+6. Click on the arrows → OK → **Close & Load**
+9. Repeat the process for **Balance Sheet** and **Cash Flow** from **FMP_Data**
+10. `Input_Data` populates automatically from `FMP_Data`
+11. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
+12. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
+13. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
 
 Limitations: FMP requires a subscription to access most of stocks data, only the most popular ones are for free. So consider doing it manually if you don't want to pay. 
 
