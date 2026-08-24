@@ -80,11 +80,13 @@ ETF files follow the same structure but replace `DuPont_Pyramid` with ETF-specif
 ![Get_Data](assets/Get_Data.jpg)
 5. In the query select → **To table** and OK
 6. Click on the arrows → OK → **Close & Load**
-9. Repeat the process for **Balance Sheet** and **Cash Flow** from **FMP_Data**
-10. `Input_Data` populates automatically from `FMP_Data`
-11. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
-12. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
-13. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
+![Open_Arrows](assets/Open_Arrows.jpg)
+7. Repeat the process for **Balance Sheet** and **Cash Flow** from **FMP_Data**
+8. `Input_Data` populates automatically from `FMP_Data`
+![Income_Statement](assets/Income_Statemet.jpg)
+9. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
+10. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
+11. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
 
 Limitations: FMP requires a subscription to access most of stocks data, only the most popular ones are for free. So consider doing it manually if you don't want to pay. 
 
@@ -145,6 +147,8 @@ There is no free API for BMV tickers. Fill `Input_Data` manually:
 - **FCF Yield** = Free Cash Flow / Market Cap (>5% attractive)
 - **Dividend Yield** = Annual Dividend / Share Price
 
+![Analysis](assets/Analysis.jpg)
+
 ---
 
 ## DuPont Pyramid
@@ -154,7 +158,7 @@ The `DuPont_Pyramid` sheet decomposes ROE into three drivers:
 ```
 ROE = Net Margin × Asset Turnover × Financial Leverage
 ```
-
+![DuPont_Pyramid](assets/DuPont_Pyramid.jpg)
 This tells you *why* ROE is what it is:
 - High **Net Margin** → the company keeps a large share of each dollar of revenue
 - High **Asset Turnover** → the company generates a lot of revenue per dollar of assets
