@@ -75,6 +75,7 @@ ETF files follow the same structure but replace `DuPont_Pyramid` with ETF-specif
 1. Open `AF_Stocks_TEMPLATE_EN.xlsx`
 2. Go to `FMP_Data` and copy Income Statement link
 ![FMP](assets/FMP.png)
+
 4. Find your key in [FMP API Key](https://financialmodelingprep.com/dashboard) and replace TICKER (e.g. `ADBE`) and YOUR_KEY, copy the full link
 5. Go to **Data → Get Data → From other sources → From web ** → in the query select → **To table** and OK. Click on the arrows → OK → **Close & Load**
 6. Repeat the process for **Balance Sheet** and **Cash Flow** from **FMP_Data**
