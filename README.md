@@ -1,4 +1,4 @@
-# Fundamental Analysis Templates — Personal Investment Toolkit
+# Fundamental Analysis Templates: Personal Investment Toolkit
 
 A set of Excel templates for analysing stocks and ETFs before investing. Built for individual investors who want to go beyond price charts and understand the business behind each ticker.
 
@@ -8,12 +8,12 @@ A set of Excel templates for analysing stocks and ETFs before investing. Built f
 
 ## What is this?
 
-After investing based mostly on price charts — and learning the hard way that price is not value — I built a structured analysis system I now apply consistently before buying any stock or ETF.
+After investing based mostly on price charts, and learning the hard way that price is not value, I built a structured analysis system I now apply consistently before buying any stock or ETF.
 
 The templates are organised into two types:
 
-- **`AF_Stocks_`** — for individual stocks (US and Mexican markets)
-- **`AF_ETF_`** — for exchange-traded funds
+- **`AF_Stocks_`**: for individual stocks (US and Mexican markets)
+- **`AF_ETF_`**: for exchange-traded funds
 
 Each file follows the same sheet structure and colour logic, so once you learn one, you know them all.
 
@@ -31,6 +31,8 @@ fundamental-analysis-templates/
 ├── etfs/
 │   ├── AF_ETF_TEMPLATE_EN.xlsx           ← blank template
 │   └── AF_ETF_VOO_EN_202608.xlsx         ← filled example (Vanguard S&P 500, Aug 2026)
+│
+├── assets/                               ← screenshots used in this README
 │
 └── README.md
 ```
@@ -60,11 +62,11 @@ ETF files follow the same structure but replace `DuPont_Pyramid` with ETF-specif
 
 | Colour | Meaning |
 |---|---|
-| 🟡 Yellow fill | **You fill this in manually** — price, P/E, analyst targets, etc. |
-| 🔵 Blue fill | **Auto-calculated** — do not edit |
-| 🟢 Green signal | Healthy — within normal range |
-| 🟡 Yellow signal | Review — worth watching |
-| 🔴 Red signal | Alert — outside healthy range |
+| 🟡 Yellow fill | **You fill this in manually**: price, P/E, analyst targets, etc. |
+| 🔵 Blue fill | **Auto-calculated**: do not edit |
+| 🟢 Green signal | Healthy: within normal range |
+| 🟡 Yellow signal | Review: worth watching |
+| 🔴 Red signal | Alert: outside healthy range |
 
 ---
 
@@ -91,9 +93,9 @@ ETF files follow the same structure but replace `DuPont_Pyramid` with ETF-specif
 
 9. Fill the yellow cells manually: Share Price, Dividend Per Share, Historical Avg P/E, 52-Week Range, Analyst targets
 10. Read the signals in `Analysis`, `DuPont_Pyramid`, and `My_Position`
-11. Save as `AF_Stocks_TICKER_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_202609.xlsx`)
+11. Save as `AF_Stocks_TICKER_LANG_YYYYMM.xlsx` (e.g. `AF_Stocks_ADBE_EN_202609.xlsx`)
 
-> **Note:** FMP requires a subscription to access most stock data. Only the most popular tickers are available for free. Consider filling `Input_Data` manually if you prefer not to subscribe — all data sources are listed in the table below.
+> **Note:** the most common tickers are available on FMP's free plan. Less common tickers require a paid subscription. The subscription is optional: you can fill `Input_Data` manually for free using the sources listed in the table below.
 
 ### For Mexican stocks (manual entry)
 
@@ -116,7 +118,7 @@ There is no free API for BMV tickers. Fill `Input_Data` manually:
 
 | Field | Source |
 |---|---|
-| Quarterly financials (US) | [financialmodelingprep.com](https://financialmodelingprep.com) — free tier covers 4 quarters |
+| Quarterly financials (US) | [financialmodelingprep.com](https://financialmodelingprep.com): free plan for the most common tickers, paid subscription for the rest |
 | Share Price (current) | [stockanalysis.com/stocks/TICKER](https://stockanalysis.com) → live price |
 | P/E Ratio (TTM) | stockanalysis.com/stocks/TICKER → Summary → "PE Ratio (TTM)" |
 | Historical Avg P/E | stockanalysis.com/stocks/TICKER/financials/ → PE Ratio column → average last 5 fiscal years manually |
@@ -132,23 +134,23 @@ There is no free API for BMV tickers. Fill `Input_Data` manually:
 
 ## The four analytical sections
 
-### 1. Valuation — Is the stock expensive?
+### 1. Valuation: Is the stock expensive?
 - **P/E Ratio**: years of current earnings per share price. Compare against sector average and the company's own historical average.
 - **P/B Ratio**: price paid per $1 of net assets. High values are normal in asset-light tech companies.
 - **Buy Zone**: combines P/E vs historical average, price position in 52-week range, and a target entry price formula.
 
-### 2. Profitability — Does it make money?
+### 2. Profitability: Does it make money?
 - **Gross Margin** = Gross Profit / Revenue
 - **Operating Margin** = EBIT / Revenue
 - **Net Margin** = Net Income / Revenue
 - **ROE** = Net Income / Equity → further decomposed via DuPont
 
-### 3. Debt & Solvency — Can it pay what it owes?
+### 3. Debt & Solvency: Can it pay what it owes?
 - **Current Ratio** = Current Assets / Current Liabilities (>2x comfortable)
 - **Debt/EBITDA** (<2x excellent, >5x alert)
 - **Interest Coverage** = EBIT / Interest Expense (>3x safe)
 
-### 4. Dividends & Cash — Does it generate real cash?
+### 4. Dividends & Cash: Does it generate real cash?
 - **FCF Yield** = Free Cash Flow / Market Cap (>5% attractive)
 - **Dividend Yield** = Annual Dividend / Share Price
 
@@ -185,7 +187,7 @@ In this example (Microsoft, August 2026):
 - The stock is trading **12.5% below its 5-year historical P/E average** → 🟢 ATTRACTIVE
 - It sits at the **65th percentile** of its 52-week range → 🟡 NORMAL
 - The target entry price based on P/E reversion is **$549.80** → 🟢 BUY ZONE
-- Overall conclusion: **🟡 NEUTRAL** — strong fundamentals, but not at a discount price yet
+- Overall conclusion: **🟡 NEUTRAL**: strong fundamentals, but not at a discount price yet
 
 This is the kind of context that turns a gut feeling into an informed decision.
 
@@ -194,8 +196,8 @@ This is the kind of context that turns a gut feeling into an informed decision.
 ## Naming convention
 
 ```
-AF_Stocks_TICKER_YYYYMM.xlsx    →   AF_Stocks_MSFT_202608.xlsx
-AF_ETF_TICKER_YYYYMM.xlsx       →   AF_ETF_VOO_202608.xlsx
+AF_Stocks_TICKER_LANG_YYYYMM.xlsx    →   AF_Stocks_MSFT_EN_202608.xlsx
+AF_ETF_TICKER_LANG_YYYYMM.xlsx       →   AF_ETF_VOO_EN_202608.xlsx
 ```
 
 ---
@@ -204,16 +206,16 @@ AF_ETF_TICKER_YYYYMM.xlsx       →   AF_ETF_VOO_202608.xlsx
 
 These templates were built as part of a personal finance project documented on Medium:
 
-- [I Have Been Buying Stocks the Wrong Way](https://medium.com/@salvador.jimenez-juarez) — why I built this system
-- [How I Analyse a Stock Before Buying It](https://medium.com/@salvador.jimenez-juarez) — walkthrough using MSFT
-- [How I Built a Personal Investment Dashboard in Power BI](https://medium.com/@salvador.jimenez-juarez) — tracking the full portfolio
+- [I Have Been Buying Stocks the Wrong Way](https://medium.com/@salvador.jimenez-juarez/i-have-been-buying-stocks-the-wrong-way-f8683e08415a): why I built this system
+- [How I Analyse a Stock Before Buying It](https://medium.com/the-investors-handbook/how-i-analyse-a-stock-before-buying-it-a-practical-walkthrough-using-microsoft-msft-as-a-real-b964e9382ddc?sharedUserId=salvador.jimenez-juarez): walkthrough using MSFT
+- [Building a Multi-Currency Investment Dashboard in Power BI](https://medium.com/the-investors-handbook/building-a-multi-currency-investment-dashboard-in-power-bi-data-model-dax-patterns-and-the-56fad0d0ec5c?sk=6e911faa97cda59325baef50fb67bec2): tracking the full portfolio
 
 ---
 
 ## About
 
-Built by [Salvador Jiménez](https://www.linkedin.com/in/salvador-jimenez97mx/) — Business Analyst and BI professional based in Paris.
+Built by [Salvador Jiménez-Juárez](https://www.linkedin.com/in/salvador-jimenez97mx/), Business Analyst and BI professional based in Paris.
 
-Multilingual portfolio (ES · EN · FR) combining financial analysis, Excel modelling, and Power BI dashboards.
+Portfolio combining financial analysis, Excel modelling, and Power BI dashboards.
 
 Questions or suggestions → open an issue or reach out on LinkedIn.
